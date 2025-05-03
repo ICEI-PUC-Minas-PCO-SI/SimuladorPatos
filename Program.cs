@@ -1,36 +1,28 @@
-﻿namespace simuladorpatos
+﻿using System;
+
+class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
+        Duck[] patos = {
+            new RedHeadDuck(),
+            new MallardDuck(),
+            new RubberDuck(),
+            new WoodenDuck()
+        };
+
+        foreach (var pato in patos)
         {
-            pato_luz patoluz = new pato_luz("Patolino");
+            pato.Display();
+            pato.Swim();
 
-            patoluz.Brilhar();
-            patoluz.bicar();
-            patoluz.dancar();
-            patoluz.latir();
+            if (pato is IQuackable quackable)
+                quackable.Quack();
 
-            Console.WriteLine("--------------------------------------------");
+            if (pato is IFlyable flyable)
+                flyable.Fly();
 
-            PatoDev patodev = new PatoDev("sr patinho");
-
-            patodev.Nadar();
-            patodev.codando();
-            patodev.bicar();
-
-            Console.WriteLine("--------------------------------------------");
-
-            patomaluco patomalucao = new patomaluco("diogenes");
-
-            patomalucao.dancar();
-            patomalucao.latir();
-            patomalucao.voar();
-            patomalucao.bicar();
-            patomalucao.codando();
-            patomalucao.Brilhar();
-
-            Console.WriteLine("--------------------------------------------");
+            Console.WriteLine("--------------");
         }
     }
 }
