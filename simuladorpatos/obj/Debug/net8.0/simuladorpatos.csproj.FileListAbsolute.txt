@@ -1,0 +1,14 @@
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\bin\Debug\net8.0\simuladorpatos.exe
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\bin\Debug\net8.0\simuladorpatos.deps.json
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\bin\Debug\net8.0\simuladorpatos.runtimeconfig.json
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\bin\Debug\net8.0\simuladorpatos.dll
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\bin\Debug\net8.0\simuladorpatos.pdb
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\obj\Debug\net8.0\simuladorpatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\obj\Debug\net8.0\simuladorpatos.AssemblyInfoInputs.cache
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\obj\Debug\net8.0\simuladorpatos.AssemblyInfo.cs
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\obj\Debug\net8.0\simuladorpatos.csproj.CoreCompileInputs.cache
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\obj\Debug\net8.0\simuladorpatos.dll
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\obj\Debug\net8.0\refint\simuladorpatos.dll
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\obj\Debug\net8.0\simuladorpatos.pdb
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\obj\Debug\net8.0\simuladorpatos.genruntimeconfig.cache
+C:\Users\Caio\source\repos\simuladorpatos\simuladorpatos\obj\Debug\net8.0\ref\simuladorpatos.dll
