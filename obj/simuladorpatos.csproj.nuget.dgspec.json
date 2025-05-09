@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rafael\\Documents\\GitHub\\SimuladorPatos\\SimuladorPatos.csproj": {}
+    "D:\\Daniel\\puc\\Nova pasta\\SimuladorPatos\\SimuladorPatos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rafael\\Documents\\GitHub\\SimuladorPatos\\SimuladorPatos.csproj": {
+    "D:\\Daniel\\puc\\Nova pasta\\SimuladorPatos\\SimuladorPatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rafael\\Documents\\GitHub\\SimuladorPatos\\SimuladorPatos.csproj",
+        "projectUniqueName": "D:\\Daniel\\puc\\Nova pasta\\SimuladorPatos\\SimuladorPatos.csproj",
         "projectName": "SimuladorPatos",
-        "projectPath": "C:\\Users\\Rafael\\Documents\\GitHub\\SimuladorPatos\\SimuladorPatos.csproj",
-        "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rafael\\Documents\\GitHub\\SimuladorPatos\\obj\\",
+        "projectPath": "D:\\Daniel\\puc\\Nova pasta\\SimuladorPatos\\SimuladorPatos.csproj",
+        "packagesPath": "C:\\Users\\danie\\.nuget\\packages\\",
+        "outputPath": "D:\\Daniel\\puc\\Nova pasta\\SimuladorPatos\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\danie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
