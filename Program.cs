@@ -1,164 +1,141 @@
 ﻿using SimuladorPatos.Classes;
 using SimuladorPatos.Interfaces;
 using System;
-using System.IO;
 
 class Program
 {
     static void Main()
     {
-        //Duck[] patos = {
-        //    new RedHeadDuck(),
-        //    new MallardDuck(),
-        //    new RubberDuck(),
-        //    new WoodenDuck()
-        //};
+        Console.WriteLine("🎮 Seja bem-vindo(a) ao SIMULADOR DE PATOS!");
 
-        //foreach (var pato in patos)
-        //{
-        //    pato.Display();
-        //    pato.Swim();
-
-        //    if (pato is IQuackable quackable)
-        //        quackable.Quack();
-
-        //    if (pato is IFlyable flyable)
-        //        flyable.Fly();
-
-        //    Console.WriteLine("--------------");
-        //}
-
-
-        Console.WriteLine("Seja bem vindo(a) ao Simulador de Patos!");
-
-        
-
-        int opcaoEscolhida;
-        string opcao, opcaoPato;
-        Boolean opcaoPatoValida = true;
-
-        Duck pato = null;
+        string opcao;
+        Duck patoSelecionado = null;
 
         do
         {
-            Menu();
-            opcao = Console.ReadLine();
+            Console.Clear();
+            MostrarMenuSelecao();
 
-            if (int.TryParse(opcao, out opcaoEscolhida))
+            opcao = Console.ReadLine()?.Trim().ToLower();
+            if (opcao == "x") break;
+
+            patoSelecionado = CriarPato(opcao);
+
+            if (patoSelecionado == null)
+            {
+                Console.WriteLine("Opção inválida. Pressione ENTER para tentar novamente.");
+                Console.ReadLine();
+                continue;
+            }
+
+            Console.Clear();
+            Console.WriteLine($"Você selecionou:");
+            patoSelecionado.Display();
+            Console.WriteLine("\n💡 Habilidades disponíveis:");
+
+            if (patoSelecionado is IQuackable) Console.WriteLine("- Grasnar");
+            if (patoSelecionado is IFlyable) Console.WriteLine("- Voar");
+            if (patoSelecionado is IKickable) Console.WriteLine("- Chutar");
+            Console.WriteLine("- Nadar");
+
+            Console.Write("\nDeseja escolher esse pato? (s/n): ");
+            var confirmacao = Console.ReadLine()?.Trim().ToLower();
+
+            if (confirmacao != "s") continue;
+
+            string acao;
+            do
             {
                 Console.Clear();
-                switch (opcaoEscolhida)
+                Console.WriteLine("🐤 Você está controlando:");
+                patoSelecionado.Display();
+                Console.WriteLine("\n-- Comandos --");
+                Console.WriteLine("[n] Nadar");
+
+                if (patoSelecionado is IQuackable) Console.WriteLine("[q] Grasnar");
+                if (patoSelecionado is IFlyable) Console.WriteLine("[v] Voar");
+                if (patoSelecionado is IKickable) Console.WriteLine("[c] Chutar");
+
+                Console.WriteLine("[m] Voltar para seleção de pato");
+                Console.Write("Escolha uma ação: ");
+                acao = Console.ReadLine()?.Trim().ToLower();
+
+                Console.Clear();
+                switch (acao)
                 {
-                    case 1:
-                        pato = new MallardDuck();
-                        pato.Display();
+                    case "n":
+                        patoSelecionado.Swim();
                         break;
-                    case 2:
-                        pato = new RedHeadDuck();
-                        pato.Display();
+                    case "q":
+                        if (patoSelecionado is IQuackable quackable)
+                            quackable.Quack();
+                        else
+                            MostrarErro();
                         break;
-                    case 3:
-                        pato = new RubberDuck();
-                        pato.Display();
+                    case "v":
+                        if (patoSelecionado is IFlyable flyable)
+                            flyable.Fly();
+                        else
+                            MostrarErro();
                         break;
-                    case 4:
-                        pato = new WoodenDuck();
-                        pato.Display();
+                    case "c":
+                        if (patoSelecionado is IKickable kickable)
+                            kickable.Kick();
+                        else
+                            MostrarErro();
                         break;
-                    case 5:
-                        pato = new AlexandrePato();
-                        pato.Display();
-                        break;
-                    case 6:
-                        pato = new Irere();
-                        pato.Display();
-                        break;
-                    case 7:
-                        pato = new PatoMergulhao();
-                        pato.Display();
+                    case "m":
+                        Console.WriteLine("Voltando ao menu de seleção...");
                         break;
                     default:
-                        Console.WriteLine("Opção inválida");
+                        Console.WriteLine("Ação inválida.");
                         break;
                 }
-    
-                do {
-                    MenuOpcoes(pato);
-                    opcaoPato = Console.ReadLine();
 
-                    switch (opcaoPato.ToLower())
-                    {
-                        case "n":
-                            pato.Swim();
-                            break;
-                        case "v":
-                            if (pato is IFlyable flyable)
-                                flyable.Fly();
-                            else
-                                opcaoPatoValida = false;
-                            break;
-                        case "q":
-                            if (pato is IQuackable quackable)
-                                quackable.Quack();
-                            else
-                                opcaoPatoValida = false;
-                            break;
-                        case "c":
-                            if (pato is IKickable kickable)
-                                kickable.Kick();
-                            else
-                                opcaoPatoValida = false;
-                            break;
-                        default:
-                            opcaoPatoValida = false;
+                if (acao != "m")
+                {
+                    Console.WriteLine("\nPressione ENTER para continuar...");
+                    Console.ReadLine();
+                }
 
-                            break;
-                    }
-                } while (opcaoPatoValida);
-                
-            } else if (opcao.ToLower() != "x")
-            {
-               
-                throw new Exception("Opção inválida");
-            }
-            pato = null;
-        } while (opcao.ToLower() != "x");
-        
+            } while (acao != "m");
+        }
+        while (opcao != "x");
 
+        Console.WriteLine("👋 Obrigado por jogar o Simulador de Patos!");
     }
 
-    public static void Menu()
+    static void MostrarMenuSelecao()
     {
-        Console.WriteLine("-- Selecione um Pato --");
-        Console.WriteLine("(1) - Pato Real");
-        Console.WriteLine("(2) - Pato Cabeça Vermelha");
-        Console.WriteLine("(3) - Pato de Borracha");
-        Console.WriteLine("(4) - Pato Carolino");
-        Console.WriteLine("(5) - Alexandre Pato");
-        Console.WriteLine("(6) - Irerê");
-        Console.WriteLine("(7) - Pato Mergulhão");
-        Console.WriteLine("(x) - Sair");
-        Console.Write("Opção: ");
-        
+        Console.WriteLine("\n=== Escolha seu PATO! ===");
+        Console.WriteLine("[1] Pato Real");
+        Console.WriteLine("[2] Pato Cabeça Vermelha");
+        Console.WriteLine("[3] Pato de Borracha");
+        Console.WriteLine("[4] Pato Carolino");
+        Console.WriteLine("[5] Alexandre Pato");
+        Console.WriteLine("[6] Irerê");
+        Console.WriteLine("[7] Pato Mergulhão");
+        Console.WriteLine("[x] Sair");
+        Console.Write("Digite o número do pato: ");
     }
 
-    public static void MenuOpcoes(Duck pato)
+    static Duck CriarPato(string opcao)
     {
-        //    pato.Swim();
-        Console.WriteLine("-- Opções --");
-        Console.WriteLine("(n) - Nadar");
+        return opcao switch
+        {
+            "1" => new MallardDuck(),
+            "2" => new RedHeadDuck(),
+            "3" => new RubberDuck(),
+            "4" => new WoodenDuck(),
+            "5" => new AlexandrePato(),
+            "6" => new Irere(),
+            "7" => new PatoMergulhao(),
+            _ => null
+        };
+    }
 
-        if (pato is IQuackable quackable)
-            Console.WriteLine("(q) - Grasnar");
-
-        if (pato is IFlyable flyable)
-            Console.WriteLine("(v) - Voar");
-
-        if (pato is IKickable kickable)
-            Console.WriteLine("(c) - Chutar");
-
-        Console.WriteLine("Aperte qualquer outra opção para sair");
-
-        Console.Write("Opção: ");
+    static void MostrarErro()
+    {
+        Console.WriteLine("❌ Este pato não possui essa habilidade.");
     }
 }
