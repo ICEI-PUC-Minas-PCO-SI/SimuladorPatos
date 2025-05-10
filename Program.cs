@@ -13,7 +13,6 @@ class Program
 
         do
         {
-            Console.Clear();
             MostrarMenuSelecao();
 
             opcao = Console.ReadLine()?.Trim().ToLower();
