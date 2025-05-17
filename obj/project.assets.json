@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rafael\\Documents\\GitHub\\SimuladorPatos\\SimuladorPatos.csproj",
-      "projectName": "SimuladorPatos",
-      "projectPath": "C:\\Users\\Rafael\\Documents\\GitHub\\SimuladorPatos\\SimuladorPatos.csproj",
+      "projectUniqueName": "C:\\Users\\Rafael\\Source\\Repos\\ICEI-PUC-Minas-PCO-SI\\SimuladorPatos\\simuladorpatos.csproj",
+      "projectName": "simuladorpatos",
+      "projectPath": "C:\\Users\\Rafael\\Source\\Repos\\ICEI-PUC-Minas-PCO-SI\\SimuladorPatos\\simuladorpatos.csproj",
       "packagesPath": "C:\\Users\\Rafael\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rafael\\Documents\\GitHub\\SimuladorPatos\\obj\\",
+      "outputPath": "C:\\Users\\Rafael\\Source\\Repos\\ICEI-PUC-Minas-PCO-SI\\SimuladorPatos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rafael\\AppData\\Roaming\\NuGet\\NuGet.Config",

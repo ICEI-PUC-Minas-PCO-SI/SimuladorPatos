@@ -39,11 +39,7 @@ namespace SimuladorPatosWinForms
             txtLog.AppendText($"🦆 Pato selecionado: {selecionado}\r\n");
             txtLog.AppendText("Habilidades disponíveis:\r\n");
 
-            if (patoAtual is IQuackable) txtLog.AppendText("- Grasnar\r\n");
-            if (patoAtual is IFlyable) txtLog.AppendText("- Voar\r\n");
-            if (patoAtual is IKickable) txtLog.AppendText("- Chutar\r\n");
-            txtLog.AppendText("- Nadar\r\n");
-            txtLog.AppendText("\r\nUse os botões à direita para testar as ações.\r\n");
+            AtualizarBotoesDeAcao();
         }
 
         private void btnNadar_Click(object sender, EventArgs e)
@@ -109,5 +105,19 @@ namespace SimuladorPatosWinForms
                 txtLog.AppendText("❌ Este pato não sabe chutar.\r\n");
             }
         }
+
+        private void AtualizarBotoesDeAcao()
+        {
+            btnVoar.Enabled = patoAtual is IFlyable;
+            btnGrasnar.Enabled = patoAtual is IQuackable;
+            btnChutar.Enabled = patoAtual is IKickable;
+
+            txtLog.AppendText(patoAtual is IQuackable ? "- Grasnar\r\n" : "");
+            txtLog.AppendText(patoAtual is IFlyable ? "- Voar\r\n" : "");
+            txtLog.AppendText(patoAtual is IKickable ? "- Chutar\r\n" : "");
+            txtLog.AppendText("- Nadar\r\n");
+            txtLog.AppendText("\r\nUse os botões à direita para testar as ações.\r\n");
+        }
+
     }
 }
