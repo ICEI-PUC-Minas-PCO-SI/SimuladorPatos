@@ -51,3 +51,13 @@ C:\Users\Rafael\Source\Repos\ICEI-PUC-Minas-PCO-SI\SimuladorPatos\obj\Debug\net8
 C:\Users\Rafael\Source\Repos\ICEI-PUC-Minas-PCO-SI\SimuladorPatos\obj\Debug\net8.0\simuladorpatos.dll
 C:\Users\Rafael\Source\Repos\ICEI-PUC-Minas-PCO-SI\SimuladorPatos\obj\Debug\net8.0\refint\simuladorpatos.dll
 C:\Users\Rafael\Source\Repos\ICEI-PUC-Minas-PCO-SI\SimuladorPatos\obj\Debug\net8.0\simuladorpatos.pdb
+D:\Daniel\puc\POO\Pato\SimuladorPatos\obj\Debug\net8.0\SimuladorPatosWinForms.Form1.resources
+D:\Daniel\puc\POO\Pato\SimuladorPatos\obj\Debug\net8.0\simuladorpatos.csproj.GenerateResource.cache
+D:\Daniel\puc\POO\Pato\SimuladorPatos\obj\Debug\net8.0\simuladorpatos.GeneratedMSBuildEditorConfig.editorconfig
+D:\Daniel\puc\POO\Pato\SimuladorPatos\obj\Debug\net8.0\simuladorpatos.AssemblyInfoInputs.cache
+D:\Daniel\puc\POO\Pato\SimuladorPatos\obj\Debug\net8.0\simuladorpatos.AssemblyInfo.cs
+D:\Daniel\puc\POO\Pato\SimuladorPatos\obj\Debug\net8.0\simuladorpatos.csproj.CoreCompileInputs.cache
+D:\Daniel\puc\POO\Pato\SimuladorPatos\obj\Debug\net8.0\simuladorpatos.sourcelink.json
+D:\Daniel\puc\POO\Pato\SimuladorPatos\obj\Debug\net8.0\simuladorpatos.dll
+D:\Daniel\puc\POO\Pato\SimuladorPatos\obj\Debug\net8.0\refint\simuladorpatos.dll
+D:\Daniel\puc\POO\Pato\SimuladorPatos\obj\Debug\net8.0\simuladorpatos.pdb

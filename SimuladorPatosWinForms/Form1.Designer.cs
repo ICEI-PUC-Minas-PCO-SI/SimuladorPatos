@@ -38,9 +38,9 @@
             // 
             // btnSelecionar
             // 
-            btnSelecionar.Location = new Point(54, 52);
+            btnSelecionar.Location = new Point(270, 11);
             btnSelecionar.Name = "btnSelecionar";
-            btnSelecionar.Size = new Size(137, 23);
+            btnSelecionar.Size = new Size(113, 23);
             btnSelecionar.TabIndex = 1;
             btnSelecionar.Text = "Selecionar Pato";
             btnSelecionar.UseVisualStyleBackColor = true;
@@ -48,7 +48,7 @@
             // 
             // btnNadar
             // 
-            btnNadar.Location = new Point(270, 11);
+            btnNadar.Location = new Point(31, 96);
             btnNadar.Name = "btnNadar";
             btnNadar.Size = new Size(77, 23);
             btnNadar.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // btnVoar
             // 
-            btnVoar.Location = new Point(270, 40);
+            btnVoar.Location = new Point(114, 96);
             btnVoar.Name = "btnVoar";
             btnVoar.Size = new Size(77, 23);
             btnVoar.TabIndex = 4;
@@ -77,7 +77,7 @@
             // 
             // btnGrasnar
             // 
-            btnGrasnar.Location = new Point(270, 69);
+            btnGrasnar.Location = new Point(197, 96);
             btnGrasnar.Name = "btnGrasnar";
             btnGrasnar.Size = new Size(77, 23);
             btnGrasnar.TabIndex = 5;
@@ -87,7 +87,7 @@
             // 
             // btnChutar
             // 
-            btnChutar.Location = new Point(270, 98);
+            btnChutar.Location = new Point(282, 96);
             btnChutar.Name = "btnChutar";
             btnChutar.Size = new Size(77, 23);
             btnChutar.TabIndex = 6;
@@ -102,14 +102,14 @@
             txtLog.Name = "txtLog";
             txtLog.ReadOnly = true;
             txtLog.ScrollBars = ScrollBars.Vertical;
-            txtLog.Size = new Size(328, 280);
+            txtLog.Size = new Size(363, 280);
             txtLog.TabIndex = 7;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(374, 450);
+            ClientSize = new Size(394, 450);
             Controls.Add(txtLog);
             Controls.Add(btnChutar);
             Controls.Add(btnGrasnar);
