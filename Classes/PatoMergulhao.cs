@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SimuladorPatos.Classes.Strategies;
 
 namespace SimuladorPatos.Classes
 {
-    internal class PatoMergulhao: Duck, IQuackable, IFlyable
+    public class PatoMergulhao : Duck
     {
-        public override void Display()
+        public PatoMergulhao()
         {
-            Console.WriteLine("Pato-Mergulhão");
+            FlyBehavior = new FlyWithWings();
+            QuackBehavior = new QuackBehavior();
+            KickBehavior = new NoKick();
         }
 
-        public void Fly()
+        public override string Display()
         {
-            Console.WriteLine("Voando como um Pato-Mergulhão!");
-        }
-
-        public void Quack()
-        {
-            Console.WriteLine("Quack-quack!");
+            return "Pato-Mergulhão";
         }
     }
 }

@@ -1,12 +1,19 @@
-public class RubberDuck : Duck, IQuackable
-{
-    public override void Display()
-    {
-        Console.WriteLine("Pato de borracha");
-    }
+using SimuladorPatos.Classes.Strategies;
 
-    public void Quack()
+namespace SimuladorPatos.Classes
+{
+    public class RubberDuck : Duck
     {
-        Console.WriteLine("Piii (som de borracha)");
+        public RubberDuck()
+        {
+            FlyBehavior = new NoFly();
+            QuackBehavior = new Squeak();
+            KickBehavior = new NoKick();
+        }
+
+        public override string Display()
+        {
+            return "Pato de borracha";
+        }
     }
 }

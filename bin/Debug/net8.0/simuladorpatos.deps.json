@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "SimuladorPatos/1.0.0": {
+      "simuladorpatos/1.0.0": {
         "runtime": {
-          "SimuladorPatos.dll": {}
+          "simuladorpatos.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "SimuladorPatos/1.0.0": {
+    "simuladorpatos/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

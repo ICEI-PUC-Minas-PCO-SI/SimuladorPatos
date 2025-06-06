@@ -1,6 +1,4 @@
 ﻿using SimuladorPatos.Classes;
-using SimuladorPatos.Interfaces;
-using System;
 
 class Program
 {
@@ -28,13 +26,15 @@ class Program
             }
 
             Console.Clear();
-            Console.WriteLine($"Você selecionou:");
-            patoSelecionado.Display();
+            Console.WriteLine($"Você selecionou: {patoSelecionado.Display()}");
             Console.WriteLine("\n💡 Habilidades disponíveis:");
 
-            if (patoSelecionado is IQuackable) Console.WriteLine("- Grasnar");
-            if (patoSelecionado is IFlyable) Console.WriteLine("- Voar");
-            if (patoSelecionado is IKickable) Console.WriteLine("- Chutar");
+            if (patoSelecionado.FlyBehavior is not null && !(patoSelecionado.FlyBehavior is SimuladorPatos.Classes.Strategies.NoFly))
+                Console.WriteLine("- Voar");
+            if (patoSelecionado.QuackBehavior is not null && !(patoSelecionado.QuackBehavior is SimuladorPatos.Classes.Strategies.Silent))
+                Console.WriteLine("- Grasnar");
+            if (patoSelecionado.KickBehavior is not null && !(patoSelecionado.KickBehavior is SimuladorPatos.Classes.Strategies.NoKick))
+                Console.WriteLine("- Chutar");
             Console.WriteLine("- Nadar");
 
             Console.Write("\nDeseja escolher esse pato? (s/n): ");
@@ -46,14 +46,16 @@ class Program
             do
             {
                 Console.Clear();
-                Console.WriteLine("🐤 Você está controlando:");
-                patoSelecionado.Display();
+                Console.WriteLine("🐤 Você está controlando: " + patoSelecionado.Display());
                 Console.WriteLine("\n-- Comandos --");
                 Console.WriteLine("[n] Nadar");
 
-                if (patoSelecionado is IQuackable) Console.WriteLine("[q] Grasnar");
-                if (patoSelecionado is IFlyable) Console.WriteLine("[v] Voar");
-                if (patoSelecionado is IKickable) Console.WriteLine("[c] Chutar");
+                if (patoSelecionado.QuackBehavior is not null && !(patoSelecionado.QuackBehavior is SimuladorPatos.Classes.Strategies.Silent))
+                    Console.WriteLine("[q] Grasnar");
+                if (patoSelecionado.FlyBehavior is not null && !(patoSelecionado.FlyBehavior is SimuladorPatos.Classes.Strategies.NoFly))
+                    Console.WriteLine("[v] Voar");
+                if (patoSelecionado.KickBehavior is not null && !(patoSelecionado.KickBehavior is SimuladorPatos.Classes.Strategies.NoKick))
+                    Console.WriteLine("[c] Chutar");
 
                 Console.WriteLine("[m] Voltar para seleção de pato");
                 Console.Write("Escolha uma ação: ");
@@ -63,25 +65,16 @@ class Program
                 switch (acao)
                 {
                     case "n":
-                        patoSelecionado.Swim();
+                        Console.WriteLine(patoSelecionado.Swim());
                         break;
                     case "q":
-                        if (patoSelecionado is IQuackable quackable)
-                            quackable.Quack();
-                        else
-                            MostrarErro();
+                        Console.WriteLine(patoSelecionado.PerformQuack());
                         break;
                     case "v":
-                        if (patoSelecionado is IFlyable flyable)
-                            flyable.Fly();
-                        else
-                            MostrarErro();
+                        Console.WriteLine(patoSelecionado.PerformFly());
                         break;
                     case "c":
-                        if (patoSelecionado is IKickable kickable)
-                            kickable.Kick();
-                        else
-                            MostrarErro();
+                        Console.WriteLine(patoSelecionado.PerformKick());
                         break;
                     case "m":
                         Console.WriteLine("Voltando ao menu de seleção...");
@@ -131,10 +124,5 @@ class Program
             "7" => new PatoMergulhao(),
             _ => null
         };
-    }
-
-    static void MostrarErro()
-    {
-        Console.WriteLine("❌ Este pato não possui essa habilidade.");
     }
 }

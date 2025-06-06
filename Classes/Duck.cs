@@ -1,9 +1,33 @@
-public abstract class Duck
-{
-    public abstract void Display();
+using SimuladorPatos.Classes.Strategies;
 
-    public void Swim()
+namespace SimuladorPatos.Classes
+{
+    public abstract class Duck
     {
-        Console.WriteLine("Nadando como um pato!");
+        public IFlyBehavior FlyBehavior { get; set; }
+        public IQuackBehavior QuackBehavior { get; set; }
+        public IKickBehavior KickBehavior { get; set; }
+
+        public abstract string Display();
+
+        public string Swim()
+        {
+            return "💦 Nadando como um pato!";
+        }
+
+        public string PerformFly()
+        {
+            return FlyBehavior?.Fly();
+        }
+
+        public string PerformQuack()
+        {
+            return QuackBehavior?.Quack();
+        }
+
+        public string PerformKick()
+        {
+            return KickBehavior?.Kick();
+        }
     }
 }

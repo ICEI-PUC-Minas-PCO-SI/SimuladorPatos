@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SimuladorPatos.Classes.Strategies;
 
 namespace SimuladorPatos.Classes
 {
-    internal class Irere : Duck, IFlyable
+    public class Irere : Duck
     {
-        public override void Display()
+        public Irere()
         {
-            Console.WriteLine("Irerê");
+            FlyBehavior = new FlyWithWings();
+            QuackBehavior = new Silent();
+            KickBehavior = new NoKick();
         }
 
-        public void Fly()
+        public override string Display()
         {
-            Console.WriteLine("Voando como um Irerê!");
+            return "Irerê";
         }
     }
 }

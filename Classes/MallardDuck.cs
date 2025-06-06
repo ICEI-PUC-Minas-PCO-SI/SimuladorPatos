@@ -1,17 +1,19 @@
-public class MallardDuck : Duck, IFlyable, IQuackable
+using SimuladorPatos.Classes.Strategies;
+
+namespace SimuladorPatos.Classes
 {
-    public override void Display()
+    public class MallardDuck : Duck
     {
-        Console.WriteLine("Pato-real (Mallard)");
-    }
+        public MallardDuck()
+        {
+            FlyBehavior = new FlyWithWings();
+            QuackBehavior = new QuackBehavior();
+            KickBehavior = new NoKick();
+        }
 
-    public void Fly()
-    {
-        Console.WriteLine("Voando como um MallardDuck!");
-    }
-
-    public void Quack()
-    {
-        Console.WriteLine("Quack-quack!");
+        public override string Display()
+        {
+            return "Pato-real (Mallard)";
+        }
     }
 }

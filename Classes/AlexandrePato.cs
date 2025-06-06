@@ -1,22 +1,19 @@
-﻿using SimuladorPatos.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SimuladorPatos.Classes.Strategies;
 
 namespace SimuladorPatos.Classes
 {
-    internal class AlexandrePato : Duck, IKickable
+    public class AlexandrePato : Duck
     {
-        public void Kick()
+        public AlexandrePato()
         {
-            Console.WriteLine("Alexandre Pato chuta para o gol");
+            FlyBehavior = new NoFly();
+            QuackBehavior = new Silent();
+            KickBehavior = new KickBall();
         }
 
-        public override void Display()
+        public override string Display()
         {
-            Console.WriteLine("Alexandre Pato");
+            return "Alexandre Pato";
         }
     }
 }

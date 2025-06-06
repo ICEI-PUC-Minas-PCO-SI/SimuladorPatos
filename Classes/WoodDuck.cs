@@ -1,7 +1,19 @@
-public class WoodenDuck : Duck
+using SimuladorPatos.Classes.Strategies;
+
+namespace SimuladorPatos.Classes
 {
-    public override void Display()
+    public class WoodenDuck : Duck
     {
-        Console.WriteLine("Pato de madeira");
+        public WoodenDuck()
+        {
+            FlyBehavior = new NoFly();
+            QuackBehavior = new Silent();
+            KickBehavior = new NoKick();
+        }
+
+        public override string Display()
+        {
+            return "Pato de madeira";
+        }
     }
 }

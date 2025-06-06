@@ -1,17 +1,19 @@
-public class RedHeadDuck : Duck, IFlyable, IQuackable
+using SimuladorPatos.Classes.Strategies;
+
+namespace SimuladorPatos.Classes
 {
-    public override void Display()
+    public class RedHeadDuck : Duck
     {
-        Console.WriteLine("Pato de cabeça vermelha");
-    }
+        public RedHeadDuck()
+        {
+            FlyBehavior = new FlyWithWings();
+            QuackBehavior = new QuackBehavior();
+            KickBehavior = new NoKick();
+        }
 
-    public void Fly()
-    {
-        Console.WriteLine("Voando como um RedHeadDuck!");
-    }
-
-    public void Quack()
-    {
-        Console.WriteLine("Quaaaack!");
+        public override string Display()
+        {
+            return "Pato de cabeça vermelha";
+        }
     }
 }
