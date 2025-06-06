@@ -4,9 +4,9 @@ namespace SimuladorPatos.Classes
 {
     public abstract class Duck
     {
-        public IFlyBehavior FlyBehavior { get; set; }
-        public IQuackBehavior QuackBehavior { get; set; }
-        public IKickBehavior KickBehavior { get; set; }
+        public IFlyBehavior? FlyBehavior { get; set; }
+        public IQuackBehavior? QuackBehavior { get; set; }
+        public IKickBehavior? KickBehavior { get; set; }
 
         public abstract string Display();
 
@@ -17,17 +17,17 @@ namespace SimuladorPatos.Classes
 
         public string PerformFly()
         {
-            return FlyBehavior?.Fly();
+            return FlyBehavior?.Fly() ?? "Este pato não voa.";
         }
 
         public string PerformQuack()
         {
-            return QuackBehavior?.Quack();
+            return QuackBehavior?.Quack() ?? "Este pato não faz som.";
         }
 
         public string PerformKick()
         {
-            return KickBehavior?.Kick();
+            return KickBehavior?.Kick() ?? "Este pato não chuta.";
         }
     }
 }

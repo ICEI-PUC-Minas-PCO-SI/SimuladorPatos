@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("simuladorpatos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc1312a17cce7fac369475134632463bd0d8d411")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8349c6faa0d253ae8c6a5c08dab0865ed3a179d")]
 [assembly: System.Reflection.AssemblyProductAttribute("simuladorpatos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("simuladorpatos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

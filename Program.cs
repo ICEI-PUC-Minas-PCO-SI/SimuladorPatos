@@ -6,15 +6,15 @@ class Program
     {
         Console.WriteLine("🎮 Seja bem-vindo(a) ao SIMULADOR DE PATOS!");
 
-        string opcao;
-        Duck patoSelecionado = null;
+        string? opcao;
+        Duck? patoSelecionado = null;
 
         do
         {
             MostrarMenuSelecao();
 
             opcao = Console.ReadLine()?.Trim().ToLower();
-            if (opcao == "x") break;
+            if (opcao == "x" || string.IsNullOrWhiteSpace(opcao)) break;
 
             patoSelecionado = CriarPato(opcao);
 
@@ -40,9 +40,10 @@ class Program
             Console.Write("\nDeseja escolher esse pato? (s/n): ");
             var confirmacao = Console.ReadLine()?.Trim().ToLower();
 
-            if (confirmacao != "s") continue;
+            if (confirmacao != "s")
+                continue;
 
-            string acao;
+            string? acao;
             do
             {
                 Console.Clear();
@@ -111,7 +112,7 @@ class Program
         Console.Write("Digite o número do pato: ");
     }
 
-    static Duck CriarPato(string opcao)
+    static Duck? CriarPato(string? opcao)
     {
         return opcao switch
         {
